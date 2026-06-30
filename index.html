@@ -1391,6 +1391,120 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   font-family:var(--sans);font-size:10px;letter-spacing:.5em;text-transform:uppercase;
   color:var(--gold-deep);font-weight:600;display:block;margin-top:6px;padding-left:.5em;
 }
+
+/* ============ GIFTS — LLUVIA DE SOBRES (jennifer style) ============ */
+.gifts-jen{text-align:center;padding:min(14vh,130px) 0}
+.gifts-jen h2{font-size:clamp(38px,5.5vw,60px);margin-bottom:20px}
+.gift-card-jen{
+  background:var(--paper);
+  border-radius:20px;
+  padding:36px 28px;
+  margin-top:28px;
+  max-width:460px;margin-left:auto;margin-right:auto;
+  box-shadow:0 4px 24px rgba(1,29,87,.08);
+  border:1px solid var(--hair);
+}
+.gift-msg-jen{
+  font-family:var(--serif);font-style:italic;
+  font-size:17px;line-height:1.85;color:var(--ink);
+}
+
+/* ============ RSVP (jennifer style) ============ */
+.rsvp-jen{
+  padding:clamp(80px,12vh,140px) 24px;
+  background:linear-gradient(to bottom,var(--paper) 0%,var(--surface) 14%,var(--surface) 86%,var(--paper) 100%);
+  text-align:center;
+}
+.rsvp-card-jen{
+  max-width:420px;margin:0 auto;
+  background:rgba(255,255,255,.90);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--hair);
+  padding:clamp(40px,6vw,68px) clamp(24px,5vw,52px);
+  position:relative;
+  box-shadow:0 24px 64px rgba(1,29,87,.09),0 4px 20px rgba(1,29,87,.12);
+}
+.rsvp-card-jen::before{
+  content:"";position:absolute;inset:10px;
+  border:1px solid var(--hair);pointer-events:none;
+}
+.rsvp-corner{position:absolute;width:44px;height:44px;pointer-events:none}
+.rsvp-corner--tl{top:0;left:0}
+.rsvp-corner--tr{top:0;right:0;transform:scaleX(-1)}
+.rsvp-corner--bl{bottom:0;left:0;transform:scaleY(-1)}
+.rsvp-corner--br{bottom:0;right:0;transform:scale(-1,-1)}
+.rsvp-inner-jen{text-align:center}
+.rsvp-ornament-svg{display:block;margin:0 auto 22px;width:min(240px,72vw);height:auto}
+.rsvp-title-jen{
+  font-family:var(--script);
+  font-size:clamp(42px,12vw,62px);
+  color:var(--accent-deep);margin-bottom:14px;line-height:1.2;
+}
+.rsvp-text-jen{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(16px,4vw,18px);font-weight:500;
+  color:var(--ink);line-height:1.85;margin-bottom:28px;
+}
+.rsvp-text-jen strong{font-style:normal;font-weight:700;color:var(--accent-deep)}
+.rsvp-divider-jen{
+  display:flex;align-items:center;gap:12px;
+  margin:0 auto 28px;max-width:280px;
+}
+.rsvp-divider-jen::before,.rsvp-divider-jen::after{
+  content:"";flex:1;height:1px;
+  background:linear-gradient(to right,transparent,var(--hair-gold),transparent);
+}
+.rsvp-divider-heart{color:var(--gold);flex-shrink:0;opacity:.85}
+.rsvp-toggle{display:flex;gap:10px;max-width:340px;margin:0 auto 18px}
+.rsvp-toggle-btn{
+  flex:1;padding:13px 8px;
+  border:1.5px solid var(--hair-gold);
+  background:rgba(255,255,255,.6);cursor:pointer;
+  font-family:var(--serif);font-style:italic;
+  font-size:16px;font-weight:600;color:var(--ink);
+  border-radius:8px;transition:all .25s;
+}
+.rsvp-toggle-btn:disabled{opacity:.45;cursor:not-allowed}
+.rsvp-toggle-btn.rsvp-toggle-selected-yes{background:rgba(139,133,0,.14);border-color:var(--gold);color:var(--accent-deep)}
+.rsvp-toggle-btn.rsvp-toggle-selected-no{background:rgba(17,5,59,.06);border-color:var(--ink-soft);color:var(--ink)}
+.rsvp-fields{display:flex;flex-direction:column;gap:10px;max-width:340px;margin:0 auto 18px}
+.rsvp-input{
+  width:100%;padding:14px 18px;
+  border:1.5px solid var(--hair-gold);border-radius:10px;
+  background:rgba(255,255,255,.85);
+  font-family:var(--serif);font-size:16px;color:var(--ink);
+  outline:none;transition:border-color .3s;
+  -webkit-appearance:none;min-height:50px;
+}
+.rsvp-input:focus{border-color:var(--gold)}
+.rsvp-input::placeholder{color:rgba(17,5,59,.4);font-style:italic}
+.rsvp-btn-jen{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;max-width:340px;
+  background:var(--accent-deep);color:#fff;border:none;cursor:pointer;
+  font-family:var(--sans);font-weight:600;
+  font-size:14px;letter-spacing:3px;text-transform:uppercase;
+  padding:16px 28px;border-radius:50px;
+  transition:background .3s,box-shadow .3s,transform .2s;
+  box-shadow:0 4px 18px rgba(1,29,87,.28);
+}
+.rsvp-btn-jen:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 10px 28px rgba(1,29,87,.32)}
+.rsvp-btn-jen:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.rsvp-deadline-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  margin-top:22px;font-family:var(--sans);
+  font-size:11px;letter-spacing:.4em;text-transform:uppercase;
+  color:var(--accent-deep);font-weight:600;padding-left:.4em;
+}
+#rsvp-pases-note{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--accent-deep);margin:0 auto 16px;line-height:1.5}
+.rsvp-pases-display{
+  max-width:300px;margin:0 auto 22px;padding:14px 26px;
+  background:rgba(139,133,0,.10);border:1px solid rgba(139,133,0,.30);
+  border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:14px;
+}
+.rsvp-pases-label{font-family:var(--serif);font-style:italic;font-weight:700;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-deep)}
+.rsvp-pases-num{font-family:var(--serif);font-weight:700;font-size:32px;color:var(--accent-deep);line-height:1}
+#rsvp-feedback{font-family:var(--serif);font-style:italic;font-size:15px;font-weight:600;text-align:center;margin:16px auto 0;max-width:340px;line-height:1.5;min-height:18px}
 </style>
 </head>
 <body>
@@ -1754,42 +1868,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     </div>
   </section>
 
-  <!-- DIVIDER: paper → bg (parking) -->
-  <div class="seam" style="--from:var(--paper);--to:var(--bg)" aria-hidden="true"></div>
+  <!-- DIVIDER: paper → paper (clima) -->
+  <div class="seam" style="--from:var(--paper);--to:var(--paper)" aria-hidden="true"></div>
 
-  <!-- PARKING NOTICE -->
-  <section class="section-bg parking">
-    <div class="container parking-inner">
-      <div class="eyebrow">Aviso importante</div>
-      <h2>Sobre el <em>estacionamiento</em></h2>
-      <div class="parking-icon">
-        <svg width="120" height="70" viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" opacity=".55">
-          <ellipse cx="60" cy="62" rx="38" ry="3" fill="#0A0F26" opacity=".12"/>
-          <path d="M22 38 Q25 22 34 20 L82 20 Q92 22 96 38 Z" fill="#000080" opacity=".7" stroke="none"/>
-          <path d="M26 36 Q29 24 36 22 L56 22 L56 36 Z" fill="#D3F2F8" opacity=".65"/>
-          <rect x="56" y="22" width="2" height="16" fill="#000080" opacity=".6"/>
-          <path d="M58 22 L80 22 Q90 24 93 36 L58 36 Z" fill="#D3F2F8" opacity=".65"/>
-          <path d="M16 38 L104 38 Q108 38 108 43 L108 52 Q108 57 103 57 L97 57 Q95 63 89 63 Q83 63 81 57 L39 57 Q37 63 31 63 Q25 63 23 57 L17 57 Q12 57 12 52 L12 43 Q12 38 16 38 Z" fill="#000080" opacity=".7" stroke="none"/>
-          <line x1="15" y1="48" x2="105" y2="48" stroke="#E6AC00" stroke-width="1" opacity=".45"/>
-          <rect x="36" y="44" width="12" height="2" rx="1" fill="#E6AC00" opacity=".5"/>
-          <rect x="66" y="44" width="14" height="2" rx="1" fill="#E6AC00" opacity=".5"/>
-          <circle cx="104" cy="42" r="2.5" fill="#E6AC00" opacity=".5"/>
-          <rect x="12" y="42" width="2" height="4" rx="1" fill="#E6AC00" opacity=".4"/>
-          <circle cx="31" cy="59" r="7" fill="#0A0F26" opacity=".6"/>
-          <circle cx="31" cy="59" r="4.5" fill="#000080" opacity=".5" stroke="#E6AC00" stroke-width="1" />
-          <circle cx="89" cy="59" r="7" fill="#0A0F26" opacity=".6"/>
-          <circle cx="89" cy="59" r="4.5" fill="#000080" opacity=".5" stroke="#E6AC00" stroke-width="1"/>
-        </svg>
-      </div>
-      <p class="parking-text">Te pedimos llegar con tiempo al recinto. Recomendamos estacionarse en las calles aledañas y, si es posible, considerar transporte privado para mayor comodidad.</p>
-    </div>
-  </section>
-
-  <!-- DIVIDER: bg → surface -->
-  <div class="seam" style="--from:var(--bg);--to:var(--surface)" aria-hidden="true"></div>
-
-  <!-- DIVIDER: surface → paper -->
-  <div class="seam" style="--from:var(--surface);--to:var(--paper)" aria-hidden="true"></div>
   <!-- CLIMA -->
   <section class="section-paper weather">
     <div class="container weather-inner">
@@ -1879,64 +1960,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     </div>
   </section>
 
-  <!-- DIVIDER: surface → paper -->
-  <div class="seam" style="--from:var(--surface);--to:var(--paper)" aria-hidden="true"></div>
+  <!-- DIVIDER: surface → surface -->
+  <div class="seam" style="--from:var(--surface);--to:var(--surface)" aria-hidden="true"></div>
 
-  <!-- KIDS POLICY -->
-  <section class="section-paper kids-policy">
-    <div class="container kids-inner">
-      <div class="eyebrow">Una nota cariñosa</div>
-      <h2>Sobre los <em>acompañantes</em></h2>
-      <div class="kids-icon">
-        <svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round">
-          <circle cx="36" cy="36" r="28" style="--len:176"/>
-          <path d="M36 16 Q24 28 24 40 Q24 52 36 56 Q48 52 48 40 Q48 28 36 16 Z" style="--len:180" fill="var(--gold-soft)" fill-opacity=".18"/>
-          <path d="M36 26 L36 42" style="--len:16"/>
-          <circle cx="36" cy="46" r="2" style="--len:14" fill="var(--gold)"/>
-        </svg>
-      </div>
-      <p class="kids-text">Por motivos de organización y capacidad, la invitación no contempla acompañantes adicionales. Agradecemos profundamente tu comprensión.</p>
-    </div>
-  </section>
-
-  <!-- DIVIDER: paper → surface -->
-  <div class="seam" style="--from:var(--paper);--to:var(--surface)" aria-hidden="true"></div>
-
-  <!-- GIFTS -->
-  <section class="section-surface gifts">
+  <!-- GIFTS — LLUVIA DE SOBRES -->
+  <section class="section-surface gifts-jen">
     <div class="container">
-      <div class="gifts-head">
-        <div class="eyebrow">Tu presencia es nuestro regalo</div>
-        <h2>Mesa <em>de</em> regalos</h2>
-        <p class="gifts-sub">Tu presencia es nuestro mejor regalo. Si deseas obsequiarnos algo, próximamente compartiremos las opciones.</p>
-      </div>
-      <div class="gifts-grid gifts-grid--two">
-        <article class="gift-card">
-          <div class="gift-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <path d="M2 8h20"/>
-              <path d="M6 14h4"/>
-              <path d="M6 17h2"/>
-            </svg>
-          </div>
-          <div class="gift-name">Transferencia bancaria</div>
-          <div class="gift-desc">
-            <span class="bank-line"><em>Por confirmar</em></span>
-          </div>
-        </article>
-        <article class="gift-card">
-          <div class="gift-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 4h16v16H4z"/>
-              <path d="M4 4l8 7 8-7"/>
-              <path d="M8 20v-5h8v5"/>
-              <line x1="12" y1="15" x2="12" y2="17"/>
-            </svg>
-          </div>
-          <div class="gift-name">Lluvia de sobres</div>
-          <div class="gift-desc">El día del evento habrá un buzón especial donde podrás depositar tu sobre con tu regalo. ¡Gracias por tu cariño!</div>
-        </article>
+      <div class="eyebrow">Mesa de Regalos</div>
+      <h2>Lluvia <em>de</em> sobres</h2>
+      <div class="gift-card-jen">
+        <p class="gift-msg-jen">
+          Tu presencia a nuestro lado es el regalo más valioso que podemos recibir.<br><br>
+          El día del evento habrá un buzón especial donde podrás depositar tu sobre. ¡Gracias por tu cariño!
+        </p>
       </div>
     </div>
   </section>
@@ -1962,31 +1998,64 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="seam" style="--from:var(--bg);--to:var(--paper)" aria-hidden="true"></div>
 
   <!-- RSVP -->
-  <section class="section-paper rsvp">
-    <div class="container rsvp-inner">
-      <svg class="rsvp-ornament" viewBox="0 0 360 80" fill="none" aria-hidden="true">
-        <g stroke="var(--gold)" stroke-width=".9" opacity=".75" fill="none">
-          <path d="M30 40 Q70 18 110 40 Q140 58 170 40"/>
-          <path d="M190 40 Q220 58 250 40 Q290 18 330 40"/>
-          <circle cx="180" cy="40" r="4"/>
-          <circle cx="180" cy="40" r="1.5" fill="var(--gold)" stroke="none"/>
-          <path d="M10 40 L30 40" opacity=".5"/>
-          <path d="M330 40 L350 40" opacity=".5"/>
-        </g>
-      </svg>
-      <div class="eyebrow">Confirma tu asistencia</div>
-      <h2>Tu presencia <em>lo</em> es todo</h2>
-      <div id="rsvp-guest-greeting" style="font-family:var(--display);font-style:italic;font-size:clamp(22px,3vw,30px);color:var(--accent-deep);margin-bottom:16px"></div>
-      <p class="rsvp-text">Por favor confírmanos si nos acompañarás antes del <b>1 de diciembre de 2026</b>.</p>
-      <div class="rsvp-pases-info" id="rsvp-pases-info">Esta invitación es para <span id="rsvp-pases-count">1</span> persona</div>
-      <div id="rsvp-status" style="display:none;font-family:var(--display);font-size:clamp(22px,3vw,28px);color:var(--accent-deep);padding:32px 0">
-        <div style="font-size:48px;margin-bottom:16px">✓</div>
-        ¡Asistencia confirmada! Nos vemos el 2 de enero.
+  <section class="section-paper rsvp-jen">
+    <div class="rsvp-card-jen">
+      <!-- Esquinas decorativas -->
+      <svg class="rsvp-corner rsvp-corner--tl" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M2 50 L2 2 L50 2" stroke="var(--gold)" stroke-width=".9" opacity=".6"/><circle cx="2" cy="2" r="2.5" fill="var(--gold)" opacity=".5"/></svg>
+      <svg class="rsvp-corner rsvp-corner--tr" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M2 50 L2 2 L50 2" stroke="var(--gold)" stroke-width=".9" opacity=".6"/><circle cx="2" cy="2" r="2.5" fill="var(--gold)" opacity=".5"/></svg>
+      <svg class="rsvp-corner rsvp-corner--bl" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M2 50 L2 2 L50 2" stroke="var(--gold)" stroke-width=".9" opacity=".6"/><circle cx="2" cy="2" r="2.5" fill="var(--gold)" opacity=".5"/></svg>
+      <svg class="rsvp-corner rsvp-corner--br" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M2 50 L2 2 L50 2" stroke="var(--gold)" stroke-width=".9" opacity=".6"/><circle cx="2" cy="2" r="2.5" fill="var(--gold)" opacity=".5"/></svg>
+
+      <div class="rsvp-inner-jen">
+        <!-- Ornamento editorial -->
+        <svg class="rsvp-ornament-svg" viewBox="0 0 320 56" fill="none" aria-hidden="true">
+          <g stroke="var(--gold)" stroke-width=".9" opacity=".8" fill="none">
+            <path d="M18 28 Q50 10 82 28 Q106 42 130 28"/>
+            <path d="M190 28 Q214 42 238 28 Q270 10 302 28"/>
+            <circle cx="160" cy="28" r="5.5"/>
+            <circle cx="160" cy="28" r="2" fill="var(--gold)" stroke="none"/>
+            <path d="M148 28 L154 28" opacity=".5"/>
+            <path d="M166 28 L172 28" opacity=".5"/>
+            <path d="M154 20 Q160 13 166 20" opacity=".55"/>
+            <path d="M154 36 Q160 43 166 36" opacity=".55"/>
+          </g>
+        </svg>
+
+        <div class="eyebrow">Confirma tu Asistencia</div>
+        <h2 class="rsvp-title-jen">Confirmar</h2>
+        <p class="rsvp-text-jen">
+          Nos encantaría contar contigo en este día tan especial.<br>
+          Por favor confirma antes del <strong>1 de Diciembre de 2026</strong>.
+        </p>
+
+        <div class="rsvp-divider-jen">
+          <svg class="rsvp-divider-heart" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+        </div>
+
+        <p id="rsvp-pases-note" style="display:none"></p>
+        <div class="rsvp-pases-display" id="rsvp-pases-display" style="display:none">
+          <span class="rsvp-pases-label">Pases</span>
+          <span class="rsvp-pases-num" id="rsvp-pases-num">&hellip;</span>
+        </div>
+
+        <div class="rsvp-toggle">
+          <button class="rsvp-toggle-btn" id="btnYes" type="button">Asistiré</button>
+          <button class="rsvp-toggle-btn" id="btnNo" type="button">No podré asistir</button>
+        </div>
+
+        <div class="rsvp-fields" id="rsvp-fields" style="display:none"></div>
+
+        <button class="rsvp-btn-jen" id="btnConfirmar" type="button">
+          <span id="rsvp-btn-text">Confirmar Asistencia</span>
+        </button>
+
+        <p id="rsvp-feedback"></p>
+
+        <div class="rsvp-deadline-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z"/></svg>
+          Límite &middot; 1 de Diciembre de 2026
+        </div>
       </div>
-      <button class="rsvp-btn" id="rsvp-confirm-btn" type="button">
-        Confirmar asistencia
-      </button>
-      <div class="rsvp-date">Fecha límite · 1 Diciembre 2026</div>
     </div>
   </section>
 
@@ -2437,10 +2506,7 @@ gsap.fromTo('.gallery-head > *',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagg
   });
 })();
 
-// ------ PARKING ------
-gsap.fromTo('.parking .eyebrow, .parking h2, .parking-icon, .parking-text',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.1,scrollTrigger:{trigger:'.parking',start:'top 78%'}});
-
-// ------ HOTELS (sección eliminada) ------
+// ------ PARKING (sección eliminada) ------
 
 // ------ PADRINOS CAROUSEL ------
 (function(){
@@ -2484,7 +2550,7 @@ gsap.fromTo('.parking .eyebrow, .parking h2, .parking-icon, .parking-text',{opac
   cortejo.forEach(function(p){
     var el=document.createElement('div');
     el.className='cortejo-name';
-    el.innerHTML=p.n+'<span class="cortejo-label">'+(p.g==='m'?'Chambelán':'Dama')+'</span>';
+    el.innerHTML=p.n;
     stage.appendChild(el);
   });
   var items=stage.querySelectorAll('.cortejo-name');
@@ -2516,15 +2582,9 @@ gsap.fromTo('.weather-link',{opacity:0},{opacity:1,duration:1,scrollTrigger:{tri
 // ------ DRESS AVOID extra ------
 gsap.fromTo('.dress-avoid',{opacity:0,y:24},{opacity:1,y:0,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:'.dress-avoid',start:'top 88%'}});
 
-// ------ KIDS draw-on ------
-const kidsPaths = document.querySelectorAll('.kids-icon svg path, .kids-icon svg circle');
-gsap.set(kidsPaths,{strokeDashoffset:(i,el)=>getComputedStyle(el).getPropertyValue('--len')||200});
-gsap.to(kidsPaths,{strokeDashoffset:0,duration:2,stagger:.25,ease:'power2.inOut',scrollTrigger:{trigger:'.kids-icon',start:'top 82%'}});
-gsap.fromTo('.kids-policy .eyebrow, .kids-policy h2, .kids-text',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.12,scrollTrigger:{trigger:'.kids-policy',start:'top 78%'}});
+// ------ KIDS (sección eliminada) ------
 
-// ------ GIFTS ------
-gsap.fromTo('.gifts-head > *',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.1,scrollTrigger:{trigger:'.gifts-head',start:'top 80%'}});
-gsap.fromTo('.gift-card',{opacity:0,y:60,rotateY:-15,scale:.95},{opacity:1,y:0,rotateY:0,scale:1,duration:1.2,stagger:.15,ease:'power4.out',scrollTrigger:{trigger:'.gifts-grid',start:'top 82%'}});
+// ------ GIFTS (sección eliminada, reemplazada por gifts-jen animación en RSVP block) ------
 
 // ------ QR scan line ------
 const qrWrap = document.getElementById('qr-wrap');
@@ -2533,75 +2593,165 @@ gsap.fromTo('.album .eyebrow, .album h2, .album-text',{opacity:0,y:18},{opacity:
 gsap.fromTo('#qr-wrap',{opacity:0,y:30,scale:.94},{opacity:1,y:0,scale:1,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'#qr-wrap',start:'top 82%'}});
 gsap.fromTo('.album-link',{opacity:0,y:10},{opacity:1,y:0,duration:.9,scrollTrigger:{trigger:'.album-link',start:'top 90%'}});
 
-// ------ RSVP dinámico con ?pases=N ------
-(function(){
-  const params = new URLSearchParams(window.location.search);
-  let pases = parseInt(params.get('pases'),10);
-  if(!Number.isFinite(pases) || pases < 1 || pases > 5) pases = 1;
-  window.__pases = pases;
+// ------ RSVP PANEL INTEGRATION (jennifer style) ------
+(function initRsvp(){
+  var PANEL_API = 'https://panel-invitados.vercel.app/api/confirmar';
+  var RSVP_URL  = 'https://boda-alma-y-luis.vercel.app';
+  var DEADLINE  = new Date(2026, 11, 1, 23, 59, 59, 999);
+  var frozen    = Date.now() > DEADLINE.getTime();
+  var params    = new URLSearchParams(window.location.search);
+  var urlPara   = (params.get('para') || '').trim();
+  var rawP      = parseInt(params.get('pases') || '1', 10);
+  var pasesAsignados = (isNaN(rawP) || rawP < 1 || rawP > 20) ? 1 : rawP;
 
-  const para = params.get('para');
-  const greetEl = document.getElementById('rsvp-guest-greeting');
-  if(para && greetEl) greetEl.textContent = `Hola, ${decodeURIComponent(para)}`;
+  var rsvpChoice = null;
+  var savedNames = [];
+  var noteEl   = document.getElementById('rsvp-pases-note');
+  var dispEl   = document.getElementById('rsvp-pases-display');
+  var numEl    = document.getElementById('rsvp-pases-num');
+  var fieldsEl = document.getElementById('rsvp-fields');
+  var btnYes   = document.getElementById('btnYes');
+  var btnNo    = document.getElementById('btnNo');
+  var btnConf  = document.getElementById('btnConfirmar');
+  var btnText  = document.getElementById('rsvp-btn-text');
+  var feedEl   = document.getElementById('rsvp-feedback');
+  if(!btnConf || !btnYes) return;
 
-  const countEl = document.getElementById('rsvp-pases-count');
-  const infoEl  = document.getElementById('rsvp-pases-info');
-  if(countEl) countEl.textContent = pases;
-  if(infoEl) infoEl.lastChild.textContent = pases === 1 ? ' persona' : ' personas';
+  if(urlPara){
+    noteEl.textContent = 'Esta invitación es para ' + urlPara;
+    noteEl.style.display = 'block';
+    dispEl.style.display = 'flex';
+    btnYes.disabled = true;
+    btnNo.disabled  = true;
+  } else {
+    numEl.textContent = pasesAsignados;
+  }
 
-  const fields = document.getElementById('rsvp-fields');
-  if(!fields) return;
-  fields.innerHTML = '';
-  Array.from({length: pases}).forEach((_,i)=>{
-    const wrap = document.createElement('div');
-    wrap.className = 'rsvp-field';
-    const label = i === 0 ? 'Invitado principal' : `Acompañante ${i+1}`;
-    const placeholder = i === 0 ? 'Tu nombre completo' : 'Nombre completo';
-    wrap.innerHTML = `<label for="rsvp-name-${i}">${label}</label><input type="text" id="rsvp-name-${i}" name="name-${i}" placeholder="${placeholder}" autocomplete="off" required>`;
-    fields.appendChild(wrap);
+  function renderFields(n){
+    fieldsEl.innerHTML = '';
+    for(var i=0;i<n;i++){
+      var inp = document.createElement('input');
+      inp.type = 'text';
+      inp.className = 'rsvp-input';
+      inp.placeholder = n === 1 ? 'Tu nombre completo' : 'Invitado ' + (i+1);
+      inp.autocomplete = 'off';
+      inp.maxLength = 60;
+      inp.value = savedNames[i] || '';
+      (function(idx){ inp.addEventListener('input', function(){ savedNames[idx] = this.value; }); })(i);
+      fieldsEl.appendChild(inp);
+    }
+  }
+
+  function selectRsvp(choice){
+    rsvpChoice = choice;
+    if(choice === 'yes'){
+      btnYes.className = 'rsvp-toggle-btn rsvp-toggle-selected-yes';
+      btnNo.className  = 'rsvp-toggle-btn';
+      renderFields(pasesAsignados);
+      fieldsEl.style.display = 'flex';
+    } else {
+      btnYes.className = 'rsvp-toggle-btn';
+      btnNo.className  = 'rsvp-toggle-btn rsvp-toggle-selected-no';
+      fieldsEl.style.display = 'none';
+      fieldsEl.innerHTML = '';
+    }
+  }
+
+  btnYes.addEventListener('click', function(){selectRsvp('yes')});
+  btnNo.addEventListener('click',  function(){selectRsvp('no')});
+
+  if(urlPara){
+    fetch(PANEL_API + '?nombre=' + encodeURIComponent(urlPara) + '&url_boda=' + encodeURIComponent(RSVP_URL))
+      .then(function(r){ return r.json(); })
+      .then(function(resp){
+        var d = resp.invitado;
+        if(d && typeof d.pases === 'number' && d.pases > 0 && d.pases <= 20){
+          pasesAsignados = d.pases;
+        }
+        numEl.textContent = pasesAsignados;
+        btnYes.disabled = false;
+        btnNo.disabled  = false;
+        if(d && (d.estado === 'confirmado' || d.estado === 'declino')){
+          if(d.nombres_confirmados && d.nombres_confirmados.length){
+            savedNames = d.nombres_confirmados.slice();
+          }
+          selectRsvp(d.estado === 'confirmado' ? 'yes' : 'no');
+          btnText.textContent = 'Actualizar respuesta';
+          feedEl.textContent = d.estado === 'confirmado'
+            ? '¡Ya tienes confirmada tu asistencia! Puedes actualizar tu respuesta.'
+            : 'Ya tienes registrado que no podrás asistir. Puedes cambiar tu respuesta.';
+        }
+      })
+      .catch(function(){
+        numEl.textContent = pasesAsignados;
+        btnYes.disabled = false;
+        btnNo.disabled  = false;
+      });
+  }
+
+  if(frozen){
+    btnYes.disabled = true;
+    btnNo.disabled  = true;
+    btnConf.disabled = true;
+    btnText.textContent = 'Fecha límite alcanzada';
+    feedEl.textContent = 'La fecha para confirmar asistencia ha pasado.';
+  }
+
+  btnConf.addEventListener('click', function(){
+    if(frozen) return;
+    if(!rsvpChoice){
+      feedEl.style.color = '#9a4a3a';
+      feedEl.textContent = 'Por favor selecciona si asistirás o no.';
+      return;
+    }
+    var nombres = [];
+    if(rsvpChoice === 'yes'){
+      var inputs = fieldsEl.querySelectorAll('.rsvp-input');
+      for(var i=0;i<inputs.length;i++){
+        var v = inputs[i].value.trim();
+        if(v) nombres.push(v);
+      }
+      if(nombres.length === 0){
+        feedEl.style.color = '#9a4a3a';
+        feedEl.textContent = 'Por favor escribe al menos un nombre.';
+        return;
+      }
+    }
+    btnText.textContent = 'Enviando…';
+    btnConf.disabled = true;
+    feedEl.textContent = ''; feedEl.style.color = '';
+    fetch(PANEL_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nombre: urlPara || 'Invitado',
+        url_boda: RSVP_URL,
+        estado: rsvpChoice === 'yes' ? 'confirmado' : 'declino',
+        pases_confirmados: rsvpChoice === 'yes' ? nombres.length : 0,
+        nombres_confirmados: nombres
+      })
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(){
+      btnText.textContent = 'Actualizar respuesta';
+      btnConf.disabled = false;
+      feedEl.style.color = 'var(--accent-deep)';
+      feedEl.textContent = rsvpChoice === 'yes'
+        ? '¡Tu asistencia ha sido confirmada! Nos vemos el 2 de enero.'
+        : 'Hemos registrado que no podrás asistir. ¡Gracias por avisarnos!';
+    })
+    .catch(function(){
+      btnText.textContent = 'Confirmar Asistencia';
+      btnConf.disabled = false;
+      feedEl.style.color = '#9a4a3a';
+      feedEl.textContent = 'Error de conexión. Intenta de nuevo.';
+    });
   });
 })();
 
-document.getElementById('rsvp-confirm-btn').addEventListener('click', async function(){
-  const btn = this;
-  const para = new URLSearchParams(window.location.search).get('para') || 'Invitado';
-  const pases = window.__pases || 1;
-  btn.disabled = true;
-  btn.textContent = 'Enviando...';
-  try {
-    const res = await fetch('https://panel-invitados.vercel.app/api/confirmar', {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({ nombre: para, pases, boda: 'alma-y-luis', asistencia: true })
-    });
-    if(!res.ok) throw new Error(res.statusText);
-    document.getElementById('rsvp-status').style.display = 'block';
-    btn.style.display = 'none';
-    document.querySelector('.rsvp-pases-info').style.display = 'none';
-  } catch(e) {
-    btn.disabled = false;
-    btn.textContent = 'Confirmar asistencia';
-    alert('No se pudo confirmar. Intenta de nuevo.');
-  }
-});
-
-// ------ RSVP magnetic button ------
-const rsvpBtn = document.querySelector('.rsvp-btn');
-if(rsvpBtn && !('ontouchstart' in window)){
-  rsvpBtn.addEventListener('mousemove',e=>{
-    const r = rsvpBtn.getBoundingClientRect();
-    const mx = e.clientX - r.left - r.width/2;
-    const my = e.clientY - r.top - r.height/2;
-    gsap.to(rsvpBtn,{x:mx*.18,y:my*.25,duration:.4,ease:'power2.out'});
-  });
-  rsvpBtn.addEventListener('mouseleave',()=>{
-    gsap.to(rsvpBtn,{x:0,y:0,duration:.6,ease:'elastic.out(1,.5)'});
-  });
-}
-gsap.fromTo('.rsvp-ornament',{opacity:0,scaleX:0},{opacity:1,scaleX:1,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.rsvp-ornament',start:'top 85%'}});
-gsap.fromTo('.rsvp .eyebrow, .rsvp h2, .rsvp-text',{opacity:0,y:16},{opacity:1,y:0,duration:1.1,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'.rsvp',start:'top 78%'}});
-gsap.fromTo('.rsvp-btn',{opacity:0,y:30,scale:.9},{opacity:1,y:0,scale:1,duration:1.2,ease:'back.out(1.4)',scrollTrigger:{trigger:'.rsvp-btn',start:'top 85%'}});
-gsap.fromTo('.rsvp-date',{opacity:0,letterSpacing:'1em'},{opacity:1,letterSpacing:'.45em',duration:1,scrollTrigger:{trigger:'.rsvp-date',start:'top 90%'}});
+// ------ RSVP animations ------
+gsap.fromTo('.rsvp-card-jen',{opacity:0,y:40},{opacity:1,y:0,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.rsvp-jen',start:'top 78%'}});
+gsap.fromTo('.gifts-jen .eyebrow, .gifts-jen h2, .gift-card-jen',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.12,scrollTrigger:{trigger:'.gifts-jen',start:'top 78%'}});
 
 // ------ FOOTER ------
 gsap.fromTo('.footer-ornament',{opacity:0,scaleX:0},{opacity:.55,scaleX:1,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'footer',start:'top 90%'}});
