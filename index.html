@@ -242,12 +242,13 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--accent)}
   text-shadow:0 4px 32px rgba(0,0,0,.4);
 }
 .hero-date{
-  font-family:var(--italiana);font-weight:400;
-  font-size:clamp(20px,2.6vw,28px);
-  letter-spacing:.35em;color:#F8F5EC;
-  text-transform:uppercase;padding-left:.35em;
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(22px,3vw,32px);
+  letter-spacing:.3em;color:#F8F5EC;
+  text-transform:uppercase;padding-left:.3em;
   font-variant-numeric:tabular-nums;margin-top:56px;
   display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;
+  text-shadow:0 2px 12px rgba(0,0,0,.5);
 }
 .hero-date .sep{color:var(--gold-soft);font-size:.6em;letter-spacing:0}
 .hero-place{
@@ -585,7 +586,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--accent)}
   background:linear-gradient(to bottom,transparent,var(--gold) 18%,var(--gold) 82%,transparent);
   opacity:.7;
 }
-.dc-svg{height:clamp(150px,22vw,190px);width:auto;display:block}
+.dc-illustration{height:clamp(150px,22vw,190px);width:auto;display:block;object-fit:contain}
 .dc-fig-name{
   font-family:var(--display);font-weight:500;
   font-size:16px;color:var(--accent-deep);
@@ -1227,9 +1228,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 }
 .itv3-gem{
   width:9px;height:9px;
-  background:linear-gradient(135deg,#F2C84B 30%,#A87D00);
+  background:linear-gradient(135deg,#8B8500 30%,#666100);
   transform:rotate(45deg);border-radius:2px;
-  box-shadow:0 0 0 4px rgba(230,172,0,.12),0 0 18px rgba(230,172,0,.45);
+  box-shadow:0 0 0 4px rgba(102,97,0,.12),0 0 18px rgba(102,97,0,.45);
   margin-bottom:18px;flex-shrink:0;
 }
 .itv3-gem-navy{
@@ -1237,8 +1238,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   box-shadow:0 0 0 4px rgba(0,0,128,.14),0 0 18px rgba(0,0,128,.45);
 }
 .itv3-gem-mid{
-  background:linear-gradient(135deg,#F5D9A8 30%,#8F6C00);
-  box-shadow:0 0 0 4px rgba(230,172,0,.10),0 0 18px rgba(230,172,0,.38);
+  background:linear-gradient(135deg,#B5AD3A 30%,#666100);
+  box-shadow:0 0 0 4px rgba(102,97,0,.10),0 0 18px rgba(102,97,0,.38);
 }
 .itv3-time{
   font-family:var(--serif);font-size:clamp(30px,4.5vw,40px);font-weight:500;
@@ -1337,6 +1338,60 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   transition:background .3s ease,border-color .3s ease,transform .3s ease;
 }
 #lightbox-close:hover{background:rgba(30,47,78,.8);border-color:var(--gold-soft);transform:scale(1.08)}
+
+/* ============ PADRINOS CAROUSEL ============ */
+.padrinos{text-align:center;padding:min(14vh,130px) 0}
+.padrinos h2{font-size:clamp(38px,5.5vw,60px);margin-bottom:20px}
+.padrinos-sub{font-family:var(--script);color:var(--gold);font-size:32px;line-height:1;margin-bottom:48px}
+.padrinos-carousel{position:relative;max-width:480px;margin:0 auto;overflow:hidden}
+.padrinos-viewport{overflow:hidden;border-radius:18px}
+.padrinos-track{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.padrino-slide{min-width:100%;padding:40px 24px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.padrino-icon{
+  width:64px;height:64px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold-soft),var(--gold-deep));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 28px rgba(102,97,0,.22);
+}
+.padrino-icon svg{width:30px;height:30px;fill:var(--bg)}
+.padrino-rol{font-family:var(--sans);font-size:11px;letter-spacing:.55em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;padding-left:.55em}
+.padrino-names{font-family:var(--display);font-size:clamp(18px,3vw,22px);color:var(--accent-deep);font-weight:500;line-height:1.5}
+.padrinos-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--hair-gold);background:rgba(248,248,255,.85);
+  backdrop-filter:blur(6px);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;color:var(--accent-deep);
+  transition:background .3s,border-color .3s;z-index:2;
+}
+.padrinos-arrow:hover{background:var(--surface);border-color:var(--gold)}
+.padrinos-arrow--prev{left:6px}
+.padrinos-arrow--next{right:6px}
+.padrinos-dots{display:flex;justify-content:center;gap:10px;margin-top:28px}
+.padrinos-dots span{
+  width:10px;height:10px;border-radius:50%;
+  background:var(--hair-gold);cursor:pointer;
+  transition:background .3s,transform .3s;
+}
+.padrinos-dots span.active{background:var(--gold);transform:scale(1.25)}
+
+/* ============ CORTEJO DE HONOR ============ */
+.cortejo{text-align:center;padding:min(14vh,130px) 0}
+.cortejo h2{font-size:clamp(38px,5.5vw,60px);margin-bottom:20px}
+.cortejo-sub{font-family:var(--script);color:var(--gold);font-size:32px;line-height:1;margin-bottom:56px}
+.cortejo-stage{position:relative;height:120px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cortejo-name{
+  position:absolute;
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(20px,3.5vw,28px);
+  color:var(--accent-deep);letter-spacing:.06em;
+  opacity:0;
+}
+.cortejo-label{
+  font-family:var(--sans);font-size:10px;letter-spacing:.5em;text-transform:uppercase;
+  color:var(--gold-deep);font-weight:600;display:block;margin-top:6px;padding-left:.5em;
+}
 </style>
 </head>
 <body>
@@ -1469,7 +1524,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           <div class="date-lbl">Sábado</div>
         </div>
       </div>
-      <div class="date-roman">II · I · MMXXVII</div>
+      <div class="date-roman">02 · 01 · 2027</div>
     </div>
   </section>
 
@@ -1522,7 +1577,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
             </g>
           </svg>
           <div class="loc-type">Ceremonia religiosa</div>
-          <div class="loc-name">Ceremonia Religiosa</div>
+          <div class="loc-name">Templo de San Diego</div>
           <div class="loc-time">5:00 pm</div>
           <div class="loc-addr">Morelia, Michoacán</div>
           <a class="loc-btn" href="https://maps.app.goo.gl/dCwBZZmQVLccN8bK6?g_st=ic" target="_blank" rel="noopener">Abrir en Google Maps</a>
@@ -1546,7 +1601,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
             </g>
           </svg>
           <div class="loc-type">Recepción</div>
-          <div class="loc-name">Recepción</div>
+          <div class="loc-name">Hacienda Figueroa</div>
           <div class="loc-time">6:30 pm</div>
           <div class="loc-addr">Morelia, Michoacán</div>
           <a class="loc-btn" href="https://maps.app.goo.gl/6hcJFYYVMZo8KkYC8?g_st=ic" target="_blank" rel="noopener">Abrir en Google Maps</a>
@@ -1571,38 +1626,38 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 
         <div class="itv3-item">
           <div class="itv3-gem"></div>
-          <div class="itv3-time">17:00</div>
+          <div class="itv3-time">5:00 pm</div>
           <div class="itv3-ev">Ceremonia Religiosa</div>
         </div>
 
         <div class="itv3-item">
           <div class="itv3-gem itv3-gem-navy"></div>
-          <div class="itv3-time">18:30</div>
+          <div class="itv3-time">6:30 pm</div>
           <div class="itv3-ev">Recepción</div>
           <div class="itv3-sub">Bienvenida y cóctel de llegada</div>
         </div>
 
         <div class="itv3-item">
           <div class="itv3-gem itv3-gem-mid"></div>
-          <div class="itv3-time">19:30</div>
+          <div class="itv3-time">7:30 pm</div>
           <div class="itv3-ev">Cena</div>
         </div>
 
         <div class="itv3-item">
           <div class="itv3-gem itv3-gem-navy"></div>
-          <div class="itv3-time">21:00</div>
+          <div class="itv3-time">9:00 pm</div>
           <div class="itv3-ev">Fiesta</div>
         </div>
 
         <div class="itv3-item">
           <div class="itv3-gem"></div>
-          <div class="itv3-time">23:00</div>
+          <div class="itv3-time">11:00 pm</div>
           <div class="itv3-ev">Pastel &amp; Brindis</div>
         </div>
 
         <div class="itv3-item">
           <div class="itv3-gem itv3-gem-navy"></div>
-          <div class="itv3-time">01:00</div>
+          <div class="itv3-time">1:00 am</div>
           <div class="itv3-ev">Despedida</div>
           <div class="itv3-sub">Cerramos la noche con abrazos</div>
         </div>
@@ -1623,33 +1678,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <!-- Figuras Caballero & Dama -->
       <div class="dc-figures">
         <div class="dc-fig">
-          <svg class="dc-svg" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <!-- Cabeza -->
-            <circle cx="50" cy="22" r="13" fill="var(--accent-deep)"/>
-            <!-- Cabello -->
-            <path d="M37 18 Q40 8 50 8 Q60 8 63 18 Q63 14 60 13 Q55 11 50 12 Q45 11 40 13 Q37 14 37 18 Z" fill="var(--gold-deep)"/>
-            <!-- Cuello -->
-            <rect x="46" y="34" width="8" height="8" fill="var(--accent-deep)"/>
-            <!-- Camisa blanca (V) -->
-            <path d="M30 44 L50 60 L70 44 L70 90 L30 90 Z" fill="#FFFFFF" stroke="var(--accent-deep)" stroke-width="1"/>
-            <!-- Saco -->
-            <path d="M22 46 Q26 42 36 44 L50 64 L64 44 Q74 42 78 46 L82 140 L18 140 Z"
-                  fill="var(--accent-deep)" stroke="var(--accent-deep)" stroke-width="1"/>
-            <!-- Solapas -->
-            <path d="M36 44 L34 80 L50 64 L66 80 L64 44 L50 60 Z" fill="var(--accent-deep)" stroke="var(--gold)" stroke-width=".8" opacity=".95"/>
-            <!-- Corbata -->
-            <path d="M47 62 L46 90 L50 96 L54 90 L53 62 L50 64 Z" fill="var(--gold)"/>
-            <!-- Botón -->
-            <circle cx="50" cy="108" r="1.4" fill="var(--gold)"/>
-            <!-- Cinturón -->
-            <rect x="20" y="138" width="60" height="5" fill="#1A1F2E"/>
-            <rect x="46" y="136" width="8" height="9" fill="var(--gold)"/>
-            <!-- Pantalón -->
-            <path d="M22 144 L28 196 L46 196 L50 168 L54 196 L72 196 L78 144 Z" fill="var(--accent-deep)"/>
-            <!-- Zapatos -->
-            <ellipse cx="36" cy="197" rx="11" ry="3" fill="#0A0F26"/>
-            <ellipse cx="64" cy="197" rx="11" ry="3" fill="#0A0F26"/>
-          </svg>
+          <img src="dress-caballero.png" alt="Esmoquin formal caballero" class="dc-illustration" width="160" height="280" loading="lazy">
           <div class="dc-fig-name">Caballero</div>
           <div class="dc-fig-hint">Traje formal<br>Corbata &amp; zapato cerrado</div>
         </div>
@@ -1657,75 +1686,72 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
         <div class="dc-divider" aria-hidden="true"></div>
 
         <div class="dc-fig">
-          <svg class="dc-svg" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <!-- Cabello atrás (volumen) -->
-            <path d="M34 28 Q30 14 50 8 Q70 14 66 28 Q70 44 64 52 Q50 48 36 52 Q30 44 34 28 Z" fill="var(--gold-deep)"/>
-            <!-- Cabeza -->
-            <circle cx="50" cy="26" r="13" fill="var(--accent-deep)"/>
-            <!-- Cabello frontal (raya al lado) -->
-            <path d="M37 22 Q40 14 50 14 Q60 14 63 22 Q58 18 50 19 Q42 18 37 22 Z" fill="var(--gold-deep)"/>
-            <!-- Aretes -->
-            <circle cx="37" cy="30" r="1.4" fill="var(--gold)"/>
-            <circle cx="63" cy="30" r="1.4" fill="var(--gold)"/>
-            <!-- Cuello -->
-            <rect x="46" y="38" width="8" height="6" fill="var(--accent-deep)"/>
-            <!-- Brazos -->
-            <path d="M30 48 Q18 64 16 90" stroke="var(--accent-deep)" stroke-width="8" stroke-linecap="round" fill="none"/>
-            <path d="M70 48 Q82 64 84 90" stroke="var(--accent-deep)" stroke-width="8" stroke-linecap="round" fill="none"/>
-            <!-- Vestido superior (escote) -->
-            <path d="M32 46 Q38 42 46 44 L50 60 L54 44 Q62 42 68 46 L72 90 L28 90 Z"
-                  fill="var(--accent-deep)" stroke="var(--accent-deep)" stroke-width="1"/>
-            <!-- Línea de busto -->
-            <path d="M42 60 Q50 66 58 60" stroke="var(--gold)" stroke-width=".9" fill="none" opacity=".7"/>
-            <!-- Cintura/cinturón dorado -->
-            <rect x="28" y="88" width="44" height="6" fill="var(--gold)" opacity=".85"/>
-            <!-- Falda larga (ball gown) -->
-            <path d="M28 94 Q14 130 4 198 L96 198 Q86 130 72 94 Z"
-                  fill="var(--accent-deep)"/>
-            <!-- Pliegues -->
-            <path d="M38 95 Q28 140 18 198" stroke="var(--gold)" stroke-width="1" fill="none" opacity=".35"/>
-            <path d="M50 95 L50 198" stroke="var(--gold)" stroke-width="1" fill="none" opacity=".28"/>
-            <path d="M62 95 Q72 140 82 198" stroke="var(--gold)" stroke-width="1" fill="none" opacity=".35"/>
-            <!-- Brillo lateral del vestido -->
-            <path d="M26 110 Q18 150 10 198 L4 198 Q12 150 22 108 Z" fill="#FFFFFF" opacity=".08"/>
-            <!-- Sombra base -->
-            <ellipse cx="50" cy="199" rx="48" ry="2" fill="#0A0F26" opacity=".25"/>
-          </svg>
+          <img src="dress-dama.png" alt="Vestido formal dama" class="dc-illustration" width="160" height="280" loading="lazy">
           <div class="dc-fig-name">Dama</div>
           <div class="dc-fig-hint">Vestido largo<br>Estilo de gala</div>
         </div>
       </div>
 
-      <!-- Tonos sugeridos -->
-      <div class="dress-section">
-        <div class="swatch-group-title">Tonos sugeridos</div>
-        <div class="dress-swatches">
-          <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#36c8c8,#1c6868)"></div><div class="swatch-n">Teal</div></div>
-          <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#1c6868,#145050)"></div><div class="swatch-n">Esmeralda</div></div>
-          <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#c6bfb3,#a8a096)"></div><div class="swatch-n">Arena</div></div>
-          <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#767676,#5a5a5a)"></div><div class="swatch-n">Grafito</div></div>
-          <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#44444c,#2e2e34)"></div><div class="swatch-n">Carbón</div></div>
-          <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#f4fcfc,#dceaea)"></div><div class="swatch-n">Hielo</div></div>
-        </div>
-      </div>
-
-      <!-- Colores a evitar -->
+      <!-- Aviso -->
       <div class="dress-avoid">
-        <div class="swatch-group-title">Colores a evitar</div>
-        <div class="avoid-list">
-          <div class="avoid-item"><span class="avoid-c" style="background:#FFFFFF;border:1px solid #ccc"></span>Blanco</div>
-          <div class="avoid-item"><span class="avoid-c" style="background:#e22400"></span>Rojo</div>
-        </div>
-        <div class="avoid-note">Estos tonos están reservados — por favor evítalos.</div>
+        <div class="avoid-note">El color blanco está reservado para la novia.</div>
       </div>
-
-      <!-- Aviso al final -->
-      <div class="dress-note dress-note--bottom">Etiqueta formal — no tenis, pants ni gorras.</div>
     </div>
   </section>
 
-  <!-- DIVIDER: bg → bg -->
-  <div class="seam" style="--from:var(--bg);--to:var(--bg)" aria-hidden="true"></div>
+  <!-- DIVIDER: bg → surface (padrinos) -->
+  <div class="seam" style="--from:var(--bg);--to:var(--surface)" aria-hidden="true"></div>
+
+  <!-- PADRINOS -->
+  <section class="section-surface padrinos">
+    <div class="container">
+      <div class="eyebrow">Acompañados por</div>
+      <h2>Nuestros <em>Padrinos</em></h2>
+      <div class="padrinos-sub">con amor y bendición</div>
+      <div class="padrinos-carousel">
+        <button class="padrinos-arrow padrinos-arrow--prev" aria-label="Anterior">&#8249;</button>
+        <button class="padrinos-arrow padrinos-arrow--next" aria-label="Siguiente">&#8250;</button>
+        <div class="padrinos-viewport">
+          <div class="padrinos-track" id="padrinosTrack">
+            <div class="padrino-slide">
+              <div class="padrino-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+              <div class="padrino-rol">Velación</div>
+              <div class="padrino-names">Gabriela Solano<br>&amp; Antonio Mendiola</div>
+            </div>
+            <div class="padrino-slide">
+              <div class="padrino-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+              <div class="padrino-rol">Lazo</div>
+              <div class="padrino-names">Juan Manuel Ambriz<br>&amp; Guadalupe Sánchez</div>
+            </div>
+            <div class="padrino-slide">
+              <div class="padrino-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4" fill="var(--surface)"/></svg></div>
+              <div class="padrino-rol">Arras</div>
+              <div class="padrino-names">Fernando Ramírez</div>
+            </div>
+          </div>
+        </div>
+        <div class="padrinos-dots" id="padrinosDots">
+          <span class="active"></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER: surface → paper (cortejo) -->
+  <div class="seam" style="--from:var(--surface);--to:var(--paper)" aria-hidden="true"></div>
+
+  <!-- CORTEJO DE HONOR -->
+  <section class="section-paper cortejo">
+    <div class="container">
+      <div class="eyebrow">Nuestro cortejo</div>
+      <h2>Cortejo de <em>Honor</em></h2>
+      <div class="cortejo-sub">quienes nos acompañan</div>
+      <div class="cortejo-stage" id="cortejoStage"></div>
+    </div>
+  </section>
+
+  <!-- DIVIDER: paper → bg (parking) -->
+  <div class="seam" style="--from:var(--paper);--to:var(--bg)" aria-hidden="true"></div>
 
   <!-- PARKING NOTICE -->
   <section class="section-bg parking">
@@ -1972,7 +1998,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
         </g>
       </svg>
       <div class="footer-names">Alma <span class="amp">&amp;</span> Luis</div>
-      <div class="footer-date">II · I · MMXXVII · Morelia</div>
+      <div class="footer-date">02 · 01 · 2027 · Morelia</div>
       <div class="footer-credit">
         <span class="credit-label">Invitación diseñada por</span>
         <a href="https://www.instagram.com/elysium.invitaciones/" target="_blank" rel="noopener" class="credit-handle">
@@ -2411,6 +2437,66 @@ gsap.fromTo('.gallery-head > *',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagg
 gsap.fromTo('.parking .eyebrow, .parking h2, .parking-icon, .parking-text',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.1,scrollTrigger:{trigger:'.parking',start:'top 78%'}});
 
 // ------ HOTELS (sección eliminada) ------
+
+// ------ PADRINOS CAROUSEL ------
+(function(){
+  const track=document.getElementById('padrinosTrack');
+  const dots=document.querySelectorAll('#padrinosDots span');
+  const prevBtn=document.querySelector('.padrinos-arrow--prev');
+  const nextBtn=document.querySelector('.padrinos-arrow--next');
+  if(!track)return;
+  let cur=0;const total=dots.length;
+  function goTo(i){
+    cur=((i%total)+total)%total;
+    track.style.transform='translateX(-'+cur*100+'%)';
+    dots.forEach(function(d,j){d.classList.toggle('active',j===cur)});
+  }
+  prevBtn.addEventListener('click',function(){goTo(cur-1)});
+  nextBtn.addEventListener('click',function(){goTo(cur+1)});
+  dots.forEach(function(d,j){d.addEventListener('click',function(){goTo(j)})});
+  var sx=0,dx=0;
+  track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;dx=0},{passive:true});
+  track.addEventListener('touchmove',function(e){dx=e.touches[0].clientX-sx},{passive:true});
+  track.addEventListener('touchend',function(){if(Math.abs(dx)>40){dx<0?goTo(cur+1):goTo(cur-1)}});
+  setInterval(function(){goTo(cur+1)},5000);
+  gsap.fromTo('.padrinos .eyebrow, .padrinos h2, .padrinos-sub',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.1,scrollTrigger:{trigger:'.padrinos',start:'top 78%'}});
+  gsap.fromTo('.padrinos-carousel',{opacity:0,y:30},{opacity:1,y:0,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.padrinos-carousel',start:'top 85%'}});
+})();
+
+// ------ CORTEJO DE HONOR — fade alternado ------
+(function(){
+  var stage=document.getElementById('cortejoStage');
+  if(!stage)return;
+  var cortejo=[
+    {n:'Vidal Nieto',g:'m'},{n:'Mariela Cisneros',g:'f'},
+    {n:'Fernando Ramírez',g:'m'},{n:'Brenda Cisneros',g:'f'},
+    {n:'José Francisco Calvillo',g:'m'},{n:'Maricruz Soria',g:'f'},
+    {n:'Mario Alberto Calvillo',g:'m'},{n:'Karla Beltrán',g:'f'},
+    {n:'Emmanuel Calvillo',g:'m'},{n:'Selma Manzanares',g:'f'},
+    {n:'Arturo Pedraza',g:'m'},{n:'Isabel Dimas',g:'f'},
+    {n:'Luis Ángel Hernández',g:'m'},{n:'Yaquelin Ambriz',g:'f'},
+    {n:'José Badillo',g:'m'}
+  ];
+  cortejo.forEach(function(p){
+    var el=document.createElement('div');
+    el.className='cortejo-name';
+    el.innerHTML=p.n+'<span class="cortejo-label">'+(p.g==='m'?'Chambelán':'Dama')+'</span>';
+    stage.appendChild(el);
+  });
+  var items=stage.querySelectorAll('.cortejo-name');
+  var idx=0;
+  function showNext(){
+    var el=items[idx];
+    gsap.fromTo(el,{opacity:0,y:20,scale:.95},{opacity:1,y:0,scale:1,duration:.7,ease:'power3.out',onComplete:function(){
+      gsap.to(el,{opacity:0,y:-20,scale:.95,duration:.6,ease:'power3.in',delay:1.8,onComplete:function(){
+        idx=(idx+1)%items.length;
+        showNext();
+      }});
+    }});
+  }
+  ScrollTrigger.create({trigger:'.cortejo',start:'top 80%',once:true,onEnter:showNext});
+  gsap.fromTo('.cortejo .eyebrow, .cortejo h2, .cortejo-sub',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.1,scrollTrigger:{trigger:'.cortejo',start:'top 78%'}});
+})();
 
 // ------ WEATHER ------
 gsap.fromTo('.weather .eyebrow, .weather h2, .weather-sub',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.08,scrollTrigger:{trigger:'.weather',start:'top 78%'}});
