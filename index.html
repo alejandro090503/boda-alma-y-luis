@@ -176,7 +176,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--accent)}
 .hero-bg{
   position:absolute;inset:0;
   width:100%;height:100%;
-  object-fit:cover;object-position:42% 22%;
+  object-fit:cover;object-position:47% 30%;
   transform:scale(1.02);
   filter:saturate(1.02) contrast(1.08) brightness(.88);
 }
@@ -349,10 +349,10 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--accent)}
   content:"";position:absolute;inset:0;z-index:0;
   background:
     linear-gradient(to bottom,
-      rgba(30,47,78,.55) 0%,
-      rgba(30,47,78,.32) 50%,
-      rgba(30,47,78,.55) 100%),
-    url('gran-dia.jpg') center/cover no-repeat;
+      rgba(22,36,62,.78) 0%,
+      rgba(22,36,62,.58) 50%,
+      rgba(22,36,62,.78) 100%),
+    url('gran-dia.jpg') 46% 34%/cover no-repeat;
   mask-image:linear-gradient(to bottom,
     transparent 0%,
     rgba(0,0,0,.15) 15%,
@@ -638,7 +638,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--accent)}
 .wheel-stage{
   position:relative;
   width:100%;
-  height:min(960px,108vw);
+  height:calc(min(820px,92vw) + clamp(40px,8vw,120px));
   max-width:1080px;
   margin:0 auto;
   padding:clamp(20px,4vw,60px);
@@ -651,9 +651,24 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--accent)}
   pointer-events:none;
 }
 .wheel{
+  /* --ring: caja del anillo. Las tarjetas se derivan de ella para que
+     10 cards de ancho --cardw queden BORDE CON BORDE (sin traslape):
+     radio = cardw / (2*sin(180/10)) = 1.618*cardw
+     extension = radio + cardh/2 = 1.618w + .667w = 2.285w = --ring/2 */
+  --ring:min(820px,92vw);
+  /* Las cards se contra-rotan (quedan verticales), asi que dos vecinas
+     no se tocan hasta que la distancia entre centros iguala su DIAGONAL:
+        c = 2*r*sin(180/n) >= sqrt(w^2+h^2) = 1.667*w   (h = 1.333*w)
+     De ahi: --f = r/w  y  --k = ring/w = 2*(f + 0.667) */
+  --n:10;              /* tarjetas visibles */
+  --k:6.73;            /* ring / cardw   (n=10) */
+  --f:2.697;           /* radio / cardw  (n=10) */
+  --cardw:calc(var(--ring) / var(--k));
+  --cardh:calc(var(--cardw) * 1.3333);
+  --radius:calc(var(--cardw) * var(--f));
   position:relative;
-  width:min(760px,90vw);
-  height:min(760px,90vw);
+  width:var(--ring);
+  height:var(--ring);
   transform-style:preserve-3d;
   will-change:transform;
 }
@@ -688,12 +703,12 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--accent)}
 .wheel-item{
   position:absolute;
   top:50%;left:50%;
-  width:clamp(130px,21vw,200px);
-  height:clamp(173px,28vw,267px);
-  margin-left:calc(clamp(130px,21vw,200px) / -2);
-  margin-top:calc(clamp(173px,28vw,267px) / -2);
-  --angle:calc((360deg / 10) * var(--i));
-  transform:rotate(var(--angle)) translateY(calc(-1 * min(280px,34vw)));
+  width:var(--cardw);
+  height:var(--cardh);
+  margin-left:calc(var(--cardw) / -2);
+  margin-top:calc(var(--cardh) / -2);
+  --angle:calc((360deg / var(--n)) * var(--i));
+  transform:rotate(var(--angle)) translateY(calc(-1 * var(--radius)));
   transform-origin:center center;
 }
 .wheel-item-inner{
@@ -710,11 +725,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--accent)}
     0 24px 60px -28px rgba(30,47,78,.34);
   transition:box-shadow .5s ease;
 }
-.wheel-item-inner::after{
-  content:"";position:absolute;inset:6px;
-  border:1px solid rgba(248,245,236,.28);
-  pointer-events:none;z-index:2;
-}
+
 .wheel-item-inner img{
   width:100%;height:100%;object-fit:cover;display:block;
   filter:saturate(.95) contrast(1.04);
@@ -724,8 +735,11 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--accent)}
     0 10px 26px -6px rgba(201,164,86,.4),
     0 28px 70px -24px rgba(30,47,78,.44);
 }
-@media (max-width:520px){
-  .wheel-item{transform:rotate(var(--angle)) translateY(calc(-1 * min(260px,36vw)))}
+
+
+@media (max-width:560px){
+  .wheel{--n:6;--k:4.667;--f:1.667}
+  .wheel-item--xtra{display:none}
 }
 
 /* ============ WHEEL SPARKS ============ */
@@ -879,6 +893,12 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--accent)}
 .weather-text strong{color:var(--accent-deep);font-weight:600}
 
 
+.lodging-note{
+  max-width:640px;margin:clamp(28px,4vw,44px) auto 0;
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(15px,1.6vw,18px);line-height:1.75;
+  color:var(--ink-soft,var(--ink));text-align:center;opacity:.85;
+}
 .weather-link{
   display:inline-block;font-family:var(--sans);font-size:11px;letter-spacing:.4em;
   text-transform:uppercase;color:var(--gold-deep);padding-left:.4em;
@@ -1931,6 +1951,71 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     </div>
   </section>
 
+  <!-- DIVIDER: paper → paper (hospedaje) -->
+  <div class="seam" style="--from:var(--paper);--to:var(--paper)" aria-hidden="true"></div>
+
+  <!-- HOSPEDAJE -->
+  <section class="section-paper locs lodging">
+    <div class="container">
+      <div style="text-align:center">
+        <div class="eyebrow">Si vienes de fuera</div>
+        <h2>Hospedaje <em>recomendado</em></h2>
+        <div class="locs-sub">para que sólo te ocupes de disfrutar</div>
+      </div>
+      <div class="locs-grid">
+        <article class="loc-card" data-tilt>
+          <span class="washi washi--l"></span>
+          <span class="washi washi--r"></span>
+          <svg class="rosette rosette--tl" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <g stroke="var(--gold)" stroke-width=".8" fill="none">
+              <circle cx="22" cy="22" r="6"/>
+              <circle cx="22" cy="22" r="14" opacity=".5"/>
+              <path d="M22 8 L22 16 M22 28 L22 36 M8 22 L16 22 M28 22 L36 22" opacity=".6"/>
+              <path d="M12 12 L17 17 M27 27 L32 32 M27 17 L32 12 M12 32 L17 27" opacity=".4"/>
+            </g>
+          </svg>
+          <svg class="rosette rosette--br" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <g stroke="var(--gold)" stroke-width=".8" fill="none">
+              <circle cx="22" cy="22" r="6"/>
+              <circle cx="22" cy="22" r="14" opacity=".5"/>
+              <path d="M22 8 L22 16 M22 28 L22 36 M8 22 L16 22 M28 22 L36 22" opacity=".6"/>
+            </g>
+          </svg>
+          <div class="loc-type">Hotel</div>
+          <div class="loc-name">Hotel Plaza Morelos</div>
+          <div class="loc-time">Frente al templo</div>
+          <div class="loc-addr">Justo enfrente del Templo de San Diego, donde será la ceremonia religiosa</div>
+          <a class="loc-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Plaza+Morelos%2C+Morelia%2C+Michoac%C3%A1n" target="_blank" rel="noopener">Abrir en Google Maps</a>
+        </article>
+        <article class="loc-card" data-tilt>
+          <span class="washi washi--l"></span>
+          <span class="washi washi--r"></span>
+          <svg class="rosette rosette--tl" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <g stroke="var(--gold)" stroke-width=".8" fill="none">
+              <circle cx="22" cy="22" r="6"/>
+              <circle cx="22" cy="22" r="14" opacity=".5"/>
+              <path d="M22 8 L22 16 M22 28 L22 36 M8 22 L16 22 M28 22 L36 22" opacity=".6"/>
+              <path d="M12 12 L17 17 M27 27 L32 32 M27 17 L32 12 M12 32 L17 27" opacity=".4"/>
+            </g>
+          </svg>
+          <svg class="rosette rosette--br" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <g stroke="var(--gold)" stroke-width=".8" fill="none">
+              <circle cx="22" cy="22" r="6"/>
+              <circle cx="22" cy="22" r="14" opacity=".5"/>
+              <path d="M22 8 L22 16 M22 28 L22 36 M8 22 L16 22 M28 22 L36 22" opacity=".6"/>
+            </g>
+          </svg>
+          <div class="loc-type">Alternativa</div>
+          <div class="loc-name">Airbnb</div>
+          <div class="loc-time">Centro de Morelia</div>
+          <div class="loc-addr">Casas y departamentos cerca del Centro Histórico, ideales si viajan en grupo o familia</div>
+          <a class="loc-btn" href="https://www.airbnb.mx/s/Morelia--Michoac%C3%A1n/homes" target="_blank" rel="noopener">Ver opciones en Airbnb</a>
+        </article>
+      </div>
+      <p class="lodging-note">Te sugerimos reservar con anticipación: el 2 de enero sigue siendo temporada alta en Morelia.</p>
+    </div>
+  </section>
+
   <!-- DIVIDER: paper → surface -->
   <div class="seam" style="--from:var(--paper);--to:var(--surface)" aria-hidden="true"></div>
 
@@ -1951,10 +2036,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
         <div class="wheel-item" style="--i:3"><div class="wheel-item-inner"><img src="foto-4.jpg" alt="Foto" loading="lazy"></div></div>
         <div class="wheel-item" style="--i:4"><div class="wheel-item-inner"><img src="foto-5.jpg" alt="Foto" loading="lazy"></div></div>
         <div class="wheel-item" style="--i:5"><div class="wheel-item-inner"><img src="foto-6.jpg" alt="Foto" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:6"><div class="wheel-item-inner"><img src="foto-1.jpg" alt="Foto" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:7"><div class="wheel-item-inner"><img src="foto-3.jpg" alt="Foto" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:8"><div class="wheel-item-inner"><img src="foto-5.jpg" alt="Foto" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:9"><div class="wheel-item-inner"><img src="foto-4.jpg" alt="Foto" loading="lazy"></div></div>
+        <div class="wheel-item wheel-item--xtra" style="--i:6"><div class="wheel-item-inner"><img src="foto-1.jpg" alt="Foto" loading="lazy"></div></div>
+        <div class="wheel-item wheel-item--xtra" style="--i:7"><div class="wheel-item-inner"><img src="foto-3.jpg" alt="Foto" loading="lazy"></div></div>
+        <div class="wheel-item wheel-item--xtra" style="--i:8"><div class="wheel-item-inner"><img src="foto-5.jpg" alt="Foto" loading="lazy"></div></div>
+        <div class="wheel-item wheel-item--xtra" style="--i:9"><div class="wheel-item-inner"><img src="foto-4.jpg" alt="Foto" loading="lazy"></div></div>
       </div>
       <div id="wheel-spark-layer" aria-hidden="true"></div>
       <div class="wheel-hub" aria-hidden="true">
