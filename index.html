@@ -176,7 +176,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--accent)}
 .hero-bg{
   position:absolute;inset:0;
   width:100%;height:100%;
-  object-fit:cover;object-position:47% 30%;
+  object-fit:cover;object-position:48% 62%;
   transform:scale(1.02);
   filter:saturate(1.02) contrast(1.08) brightness(.88);
 }
@@ -893,6 +893,65 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--accent)}
 .weather-text strong{color:var(--accent-deep);font-weight:600}
 
 
+/* ---- Nuestros Padres ---- */
+.padres{text-align:center}
+.padres-sub{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(15px,1.7vw,19px);color:var(--ink-soft);
+  margin-top:10px;opacity:.9;
+}
+.padres-grid{
+  display:grid;grid-template-columns:1fr auto 1fr;
+  align-items:center;gap:clamp(20px,4vw,56px);
+  max-width:860px;margin:clamp(34px,5vw,54px) auto 0;
+}
+.padres-div{width:1px;height:100%;min-height:96px;
+  background:linear-gradient(180deg,transparent,var(--hair-gold),transparent)}
+.padres-rol{
+  font-family:var(--sans);font-size:11px;font-weight:500;
+  letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold-deep,var(--gold));margin-bottom:14px;
+}
+.padres-names{
+  font-family:var(--serif);font-size:clamp(17px,2.1vw,22px);
+  line-height:1.85;color:var(--ink);
+}
+@media (max-width:640px){
+  .padres-grid{grid-template-columns:1fr;gap:26px}
+  .padres-div{width:100%;height:1px;min-height:0;
+    background:linear-gradient(90deg,transparent,var(--hair-gold),transparent)}
+}
+
+/* ---- Mesa de regalos: Liverpool ---- */
+.gift-liverpool{
+  display:flex;flex-direction:column;align-items:center;gap:14px;
+  width:max-content;max-width:100%;
+  margin:clamp(26px,4vw,40px) auto 0;
+  padding:clamp(22px,3vw,30px) clamp(30px,5vw,52px);
+  border:1px solid var(--hair-gold);
+  background:var(--paper);
+  text-decoration:none;
+  transition:box-shadow .45s ease,transform .45s ease;
+}
+.gift-liverpool:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 34px -18px rgba(30,47,78,.45);
+}
+.gift-liverpool img{
+  width:clamp(150px,22vw,200px);height:auto;display:block;
+}
+.gift-liverpool-code{
+  font-family:var(--sans);font-size:12px;letter-spacing:.12em;
+  color:var(--ink-soft);
+}
+.gift-liverpool-code strong{color:var(--ink);letter-spacing:.16em}
+.gift-liverpool-cta{
+  font-family:var(--sans);font-size:11px;font-weight:500;
+  letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold-deep,var(--gold));
+  padding-top:12px;border-top:1px solid var(--hair-gold);
+  width:100%;text-align:center;
+}
 .lodging-note{
   max-width:640px;margin:clamp(28px,4vw,44px) auto 0;
   font-family:var(--serif);font-style:italic;
@@ -1395,23 +1454,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 }
 .padrinos-dots span.active{background:var(--gold);transform:scale(1.25)}
 
-/* ============ CORTEJO DE HONOR ============ */
-.cortejo{text-align:center;padding:min(14vh,130px) 0}
-.cortejo h2{font-size:clamp(38px,5.5vw,60px);margin-bottom:20px}
-.cortejo-sub{font-family:var(--script);color:var(--gold);font-size:32px;line-height:1;margin-bottom:56px}
-.cortejo-stage{position:relative;height:120px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.cortejo-name{
-  position:absolute;
-  font-family:var(--display);font-weight:500;
-  font-size:clamp(20px,3.5vw,28px);
-  color:var(--accent-deep);letter-spacing:.06em;
-  opacity:0;
-}
-.cortejo-label{
-  font-family:var(--sans);font-size:10px;letter-spacing:.5em;text-transform:uppercase;
-  color:var(--gold-deep);font-weight:600;display:block;margin-top:6px;padding-left:.5em;
-}
-
 /* ============ GIFTS — LLUVIA DE SOBRES (jennifer style) ============ */
 .gifts-jen{text-align:center;padding:min(14vh,130px) 0}
 .gifts-jen h2{font-size:clamp(38px,5.5vw,60px);margin-bottom:20px}
@@ -1633,8 +1675,31 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
           </g>
         </svg>
         <span class="verse-quote">&ldquo;</span>
-        <p class="verse-text">No fue el destino quien nos unió, sino la forma tan natural en que el mundo se volvió hogar cuando estábamos juntos.</p>
+        <p class="verse-text">Después de un hermoso camino juntos, hemos decidido unir nuestras vidas ante Dios y nuestros seres queridos.<br><br>Nos casamos, y queremos compartir este día tan especial con ustedes.</p>
         <div class="verse-sig">Alma &amp; David</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER: surface → surface (padres) -->
+  <div class="seam" style="--from:var(--surface);--to:var(--surface)" aria-hidden="true"></div>
+
+  <!-- NUESTROS PADRES -->
+  <section class="section-surface padres">
+    <div class="container">
+      <div class="eyebrow">Con la bendición de Dios y en compañía de</div>
+      <h2>Nuestros <em>Padres</em></h2>
+      <div class="padres-sub">quienes nos dieron la vida y el ejemplo</div>
+      <div class="padres-grid">
+        <div class="padres-col">
+          <div class="padres-rol">Papás de la novia</div>
+          <div class="padres-names">Ma. Guadalupe Ambriz Jiménez<br>Adolfo Cisneros Tinoco</div>
+        </div>
+        <div class="padres-div" aria-hidden="true"></div>
+        <div class="padres-col">
+          <div class="padres-rol">Papás del novio</div>
+          <div class="padres-names">Rosa Mendiola González<br>Francisco Javier Calvillo Piña</div>
+        </div>
       </div>
     </div>
   </section>
@@ -1789,12 +1854,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
         </div>
 
         <div class="itv3-item">
-          <div class="itv3-gem"></div>
-          <div class="itv3-time">11:00 pm</div>
-          <div class="itv3-ev">Pastel &amp; Brindis</div>
-        </div>
-
-        <div class="itv3-item">
           <div class="itv3-gem itv3-gem-navy"></div>
           <div class="itv3-time">1:00 am</div>
           <div class="itv3-ev">Despedida</div>
@@ -1886,21 +1945,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
     </div>
   </section>
 
-  <!-- DIVIDER: surface → paper (cortejo) -->
+  <!-- DIVIDER: surface → paper (clima) -->
   <div class="seam" style="--from:var(--surface);--to:var(--paper)" aria-hidden="true"></div>
-
-  <!-- CORTEJO DE HONOR -->
-  <section class="section-paper cortejo">
-    <div class="container">
-      <div class="eyebrow">Nuestro cortejo</div>
-      <h2>Cortejo de <em>Honor</em></h2>
-      <div class="cortejo-sub">quienes nos acompañan</div>
-      <div class="cortejo-stage" id="cortejoStage"></div>
-    </div>
-  </section>
-
-  <!-- DIVIDER: paper → paper (clima) -->
-  <div class="seam" style="--from:var(--paper);--to:var(--paper)" aria-hidden="true"></div>
 
   <!-- CLIMA -->
   <section class="section-paper weather">
@@ -2062,14 +2108,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <!-- GIFTS — LLUVIA DE SOBRES -->
   <section class="section-surface gifts-jen">
     <div class="container">
-      <div class="eyebrow">Mesa de Regalos</div>
-      <h2>Lluvia <em>de</em> sobres</h2>
+      <div class="eyebrow">Con cariño</div>
+      <h2>Mesa <em>de</em> Regalos</h2>
       <div class="gift-card-jen">
         <p class="gift-msg-jen">
-          Tu presencia a nuestro lado es el regalo más valioso que podemos recibir.<br><br>
-          El día del evento habrá un buzón especial donde podrás depositar tu sobre. ¡Gracias por tu cariño!
+          Contar con ustedes es suficiente, pero si desean tener un detalle, agradecemos una contribución para nuestra nueva etapa.
         </p>
       </div>
+      <a class="gift-liverpool" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60036247" target="_blank" rel="noopener">
+        <img src="liverpool.png" alt="Liverpool" decoding="async">
+        <span class="gift-liverpool-code">No. de evento <strong>60036247</strong></span>
+        <span class="gift-liverpool-cta">Ver mesa de regalos</span>
+      </a>
     </div>
   </section>
 
@@ -2629,40 +2679,7 @@ gsap.fromTo('.gallery-head > *',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagg
   gsap.fromTo('.padrinos-carousel',{opacity:0,y:30},{opacity:1,y:0,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.padrinos-carousel',start:'top 85%'}});
 })();
 
-// ------ CORTEJO DE HONOR — fade alternado ------
-(function(){
-  var stage=document.getElementById('cortejoStage');
-  if(!stage)return;
-  var cortejo=[
-    {n:'Vidal Nieto',g:'m'},{n:'Mariela Cisneros',g:'f'},
-    {n:'Fernando Ramírez',g:'m'},{n:'Brenda Cisneros',g:'f'},
-    {n:'José Francisco Calvillo',g:'m'},{n:'Maricruz Soria',g:'f'},
-    {n:'Mario Alberto Calvillo',g:'m'},{n:'Karla Beltrán',g:'f'},
-    {n:'Emmanuel Calvillo',g:'m'},{n:'Selma Manzanares',g:'f'},
-    {n:'Arturo Pedraza',g:'m'},{n:'Isabel Dimas',g:'f'},
-    {n:'Luis Ángel Hernández',g:'m'},{n:'Yaquelin Ambriz',g:'f'},
-    {n:'José Badillo',g:'m'}
-  ];
-  cortejo.forEach(function(p){
-    var el=document.createElement('div');
-    el.className='cortejo-name';
-    el.innerHTML=p.n;
-    stage.appendChild(el);
-  });
-  var items=stage.querySelectorAll('.cortejo-name');
-  var idx=0;
-  function showNext(){
-    var el=items[idx];
-    gsap.fromTo(el,{opacity:0,y:20,scale:.95},{opacity:1,y:0,scale:1,duration:.7,ease:'power3.out',onComplete:function(){
-      gsap.to(el,{opacity:0,y:-20,scale:.95,duration:.6,ease:'power3.in',delay:1.8,onComplete:function(){
-        idx=(idx+1)%items.length;
-        showNext();
-      }});
-    }});
-  }
-  ScrollTrigger.create({trigger:'.cortejo',start:'top 80%',once:true,onEnter:showNext});
-  gsap.fromTo('.cortejo .eyebrow, .cortejo h2, .cortejo-sub',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.1,scrollTrigger:{trigger:'.cortejo',start:'top 78%'}});
-})();
+gsap.fromTo('.padres .eyebrow, .padres h2, .padres-sub, .padres-col',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.09,scrollTrigger:{trigger:'.padres',start:'top 78%'}});
 
 // ------ WEATHER ------
 gsap.fromTo('.weather .eyebrow, .weather h2, .weather-sub',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.08,scrollTrigger:{trigger:'.weather',start:'top 78%'}});
