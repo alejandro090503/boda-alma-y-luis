@@ -2093,16 +2093,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
       <div class="wheel" id="wheel">
         <span class="wheel-spoke" aria-hidden="true"></span>
         <span class="wheel-spoke wheel-spoke--inner" aria-hidden="true"></span>
-        <div class="wheel-item" style="--i:0"><div class="wheel-item-inner"><img src="foto-1.jpg" alt="Foto" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:1"><div class="wheel-item-inner"><img src="foto-2.jpg" alt="Foto" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:2"><div class="wheel-item-inner"><img src="foto-3.jpg" alt="Foto" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:3"><div class="wheel-item-inner"><img src="foto-4.jpg" alt="Foto" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:4"><div class="wheel-item-inner"><img src="foto-5.jpg" alt="Foto" loading="lazy"></div></div>
-        <div class="wheel-item" style="--i:5"><div class="wheel-item-inner"><img src="foto-6.jpg" alt="Foto" loading="lazy"></div></div>
-        <div class="wheel-item wheel-item--xtra" style="--i:6"><div class="wheel-item-inner"><img src="foto-1.jpg" alt="Foto" loading="lazy"></div></div>
-        <div class="wheel-item wheel-item--xtra" style="--i:7"><div class="wheel-item-inner"><img src="foto-3.jpg" alt="Foto" loading="lazy"></div></div>
-        <div class="wheel-item wheel-item--xtra" style="--i:8"><div class="wheel-item-inner"><img src="foto-5.jpg" alt="Foto" loading="lazy"></div></div>
-        <div class="wheel-item wheel-item--xtra" style="--i:9"><div class="wheel-item-inner"><img src="foto-4.jpg" alt="Foto" loading="lazy"></div></div>
+        <div class="wheel-item" style="--i:0"><div class="wheel-item-inner"><img src="foto-7-t.jpg" data-full="foto-7.jpg" alt="Los novios en el templo" decoding="async"></div></div>
+        <div class="wheel-item" style="--i:1"><div class="wheel-item-inner"><img src="foto-1-t.jpg" data-full="foto-1.jpg" alt="Brindis en el picnic" decoding="async"></div></div>
+        <div class="wheel-item" style="--i:2"><div class="wheel-item-inner"><img src="foto-8-t.jpg" data-full="foto-8.jpg" alt="Save the date" decoding="async"></div></div>
+        <div class="wheel-item" style="--i:3"><div class="wheel-item-inner"><img src="foto-2-t.jpg" data-full="foto-2.jpg" alt="En las escalinatas" decoding="async"></div></div>
+        <div class="wheel-item" style="--i:4"><div class="wheel-item-inner"><img src="foto-9-t.jpg" data-full="foto-9.jpg" alt="En la fuente" decoding="async"></div></div>
+        <div class="wheel-item" style="--i:5"><div class="wheel-item-inner"><img src="foto-3-t.jpg" data-full="foto-3.jpg" alt="Saliendo del civil" decoding="async"></div></div>
+        <div class="wheel-item wheel-item--xtra" style="--i:6"><div class="wheel-item-inner"><img src="foto-10-t.jpg" data-full="foto-10.jpg" alt="El anillo" decoding="async"></div></div>
+        <div class="wheel-item wheel-item--xtra" style="--i:7"><div class="wheel-item-inner"><img src="foto-4-t.jpg" data-full="foto-4.jpg" alt="Leyendo el save the date" decoding="async"></div></div>
+        <div class="wheel-item wheel-item--xtra" style="--i:8"><div class="wheel-item-inner"><img src="foto-5-t.jpg" data-full="foto-5.jpg" alt="Paseo por el centro" decoding="async"></div></div>
+        <div class="wheel-item wheel-item--xtra" style="--i:9"><div class="wheel-item-inner"><img src="foto-6-t.jpg" data-full="foto-6.jpg" alt="Frente al templo" decoding="async"></div></div>
       </div>
       <div id="wheel-spark-layer" aria-hidden="true"></div>
       <div class="wheel-hub" aria-hidden="true">
@@ -2685,7 +2685,7 @@ gsap.fromTo('.gallery-head > *',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagg
     el.addEventListener('click', (e)=>{
       e.preventDefault();
       e.stopPropagation();
-      openLightbox(img.currentSrc || img.src, img.alt);
+      openLightbox(img.dataset.full || img.currentSrc || img.src, img.alt);
     });
   });
 
